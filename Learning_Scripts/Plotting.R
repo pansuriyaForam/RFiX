@@ -1,12 +1,12 @@
-# Generate a vector of 10 random numbers between 1 and 100.
-vec <- seq(1, 100, length.out = 10)
+library(dplyr)
+dt_frm <- data.frame(
+  Name = c("Amm", "Bnn", "Coo"),
+  Score = c(100, 150, 120),
+  Age = c(93, 53, 43)
+)
 
-# Sort in descending order
-sorted_vec <- sort(vec, decreasing = TRUE)
-
-# Extract the top 3 values
-top_3 <- head(sorted_vec, 3)
-
-# Print results
-sorted_vec
-top_3
+# Create a scatter plot of the "Score" vs "Age" from the previous data frame(DataWrangling).
+plot(dt_frm$Age, dt_frm$Score,
+     main = "Score vs Age",
+     xlab = "Age", ylab = "Score",
+     col = "blue", pch = 20)
